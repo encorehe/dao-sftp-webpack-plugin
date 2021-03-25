@@ -9,9 +9,10 @@ const defaultConfig = {
     username: '',
     password: '',
     from: '',
-    to: ''
+    to: '',
+    uploadFinish(){}
 }
-class daoSftpWebpackPlugin {
+class eSftpWebpackPlugin {
     constructor(config) {
         const cfg = Object.assign(defaultConfig, config || {});
         this.config = cfg;
@@ -28,7 +29,7 @@ class daoSftpWebpackPlugin {
         // https://webpack.js.org/api/compiler-hooks
         compiler.hooks.done.tap(pluginName, (compilation) => {
             const _ = this;
-            const { from, to } = _.config;
+            const { from, to,uploadFinish } = _.config;
             // console.log("config=>", _.config)
             // console.log("编译完成后执行...")
             // ==============================================================================
@@ -42,7 +43,8 @@ class daoSftpWebpackPlugin {
             }
             queue.push(
                 function(callback) {
-                    client.close()
+                    client.close();
+                    if(uploadFinish) uploadFinish()
                     callback()
                 }
             )
@@ -88,4 +90,4 @@ class daoSftpWebpackPlugin {
         });
     }
 }
-module.exports = daoSftpWebpackPlugin;
+module.exports = eSftpWebpackPlugin;

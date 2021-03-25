@@ -1,7 +1,7 @@
 {
-  "name": "dao-sftp-webpack-plugin",
-  "version": "1.0.3",
-  "description": "基于webpack实现sftp上传功能（含scp2）",
+  "name": "e-sftp-webpack-plugin",
+  "version": "1.0.0",
+  "description": "基于webpack实现sftp上传功能（含scp2,base on dao-sftp-webpack-plugin",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,12 +16,12 @@
     "scp2",
     "sftp"
   ],
-  "author": "道心",
+  "author": "encorehe",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jsgu/dao-sftp-webpack-plugin/issues"
+    "url": "https://github.com/encorehe/dao-sftp-webpack-plugin/issues"
   },
-  "homepage": "https://github.com/jsgu/dao-sftp-webpack-plugin#readme",
+  "homepage": "https://github.com/encorehe/dao-sftp-webpack-plugin#readme",
   "devDependencies": {},
   "dependencies": {
     "async-waterfall": "^0.1.5",
